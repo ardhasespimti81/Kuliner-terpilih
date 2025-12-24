@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syarat & Ketentuan</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #ffffff);
+}
+
+.container {
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 18px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border: 2px solid #4CAF50;
+}
+
+h2 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 16px;
+}
+
+.item {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.agree-box {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.agree-box button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-yes {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-no {
+    background: #e53935;
+    color: white;
+}
+
+.btn-next {
+    margin-top: 18px;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background: #9e9e9e;
+    color: white;
+    cursor: not-allowed;
+}
+
+.btn-next.active {
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Syarat & Ketentuan Penarikan Poin</h2>
+
+        <div class="item">🎁 <b>Penggunaan Poin</b><br>
+        Poin hanya dapat ditarik atau ditukarkan dengan barang, produk, atau layanan yang telah ditentukan.</div>
+
+        <div class="item">🛒 <b>Pembatasan Penukaran</b><br>
+        Poin hanya berlaku untuk produk tertentu yang telah ditetapkan.</div>
+
+        <div class="item">⚙️ <b>Penentuan Nilai Poin</b><br>
+        Nilai poin ditentukan oleh penyelenggara dan dapat berubah sewaktu-waktu.</div>
+
+        <div class="item">🔒 <b>Keputusan Final</b><br>
+        Keputusan pemberian poin bersifat final dan tidak dapat diganggu gugat.</div>
+
+        <div class="item">💳 <b>Penarikan ke Saldo</b><br>
+        Saldo bukan uang tunai dan bukan alat pembayaran sah.</div>
+
+        <div class="item">🚫 <b>Tidak Dapat Diuangkan</b><br>
+        Poin dan saldo tidak dapat diuangkan atau ditransfer.</div>
+
+        <div class="item">🎫 <b>Penggunaan Saldo</b><br>
+        Saldo hanya berlaku untuk hadiah atau produk tertentu.</div>
+
+        <div class="item">🏷️ <b>Potongan Loyalitas</b><br>
+        Saldo hanya sebagai potongan harga loyalitas.</div>
+
+        <div class="item">🔄 <b>Perubahan Ketentuan</b><br>
+        Ketentuan dapat diubah sewaktu-waktu tanpa pemberitahuan.</div>
+
+        <div class="item" style="font-weight:bold; color:#2e7d32;">
+        Dengan menggunakan fitur poin, Anda dianggap memahami dan menyetujui seluruh ketentuan di atas.
+        </div>
+
+        <div class="agree-box">
+            <button class="btn-yes" onclick="agreeYes()">YA</button>
+            <button class="btn-no" onclick="agreeNo()">TIDAK</button>
+        </div>
+
+        <button id="nextBtn" class="btn-next" onclick="goNext()">LANJUT</button>
+    </div>
+</div>
+
+<script>
+const nextLink = "https://kulinerpilihan.umkmdigital.net/akun/change-point";
+
+function agreeYes() {
+    const btn = document.getElementById("nextBtn");
+    btn.classList.add("active");
+}
+
+function agreeNo() {
+    alert("Anda harus menyetujui syarat & ketentuan untuk melanjutkan.");
+}
+
+function goNext() {
+    const btn = document.getElementById("nextBtn");
+    if (btn.classList.contains("active")) {
+        window.location.href = nextLink;
+    }
+}
+</script>
+
+</body>
+</html>
